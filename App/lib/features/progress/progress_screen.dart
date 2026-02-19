@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
-import 'package:grad_project/presentation/screens/auth/login_screen.dart';
+import 'package:grad_project/features/auth/login_screen.dart';
 
 class ProgressScreen extends StatelessWidget {
   const ProgressScreen({super.key});

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
 import 'package:animate_do/animate_do.dart';
 import 'learning_game_screen.dart';
+import 'number_supermarket_screen.dart';
 
 class LessonsScreen extends StatelessWidget {
   final String courseTitle;
@@ -64,14 +65,23 @@ class LessonsScreen extends StatelessWidget {
   Widget _buildLessonCard(BuildContext context, int lessonNum) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => LearningGameScreen(
-              lessonTitle: "$courseTitle - Lesson $lessonNum",
+        if (lessonNum == 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const NumberSupermarketScreen(),
             ),
-          ),
-        );
+          );
+        } else {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LearningGameScreen(
+                lessonTitle: "$courseTitle - Lesson $lessonNum",
+              ),
+            ),
+          );
+        }
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 15.h),

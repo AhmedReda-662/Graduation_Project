@@ -42,6 +42,7 @@ dependencies:
   animate_do: ^4.2.0
   image_picker: ^1.2.1
   fluttertoast: ^9.0.0
+  flutter_tts: ^4.0.2
 
 dev_dependencies:
   flutter_test:

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grad_project/core/theme/app_colors.dart';
-import 'package:grad_project/presentation/screens/home/lessons_screen.dart';
-import 'package:grad_project/presentation/screens/progress/progress_screen.dart';
-import 'package:grad_project/presentation/screens/home/profile_screen.dart';
+import 'package:grad_project/features/home/lessons_screen.dart';
+import 'package:grad_project/features/progress/progress_screen.dart';
+import 'package:grad_project/features/home/profile_screen.dart';
 
 import 'dart:io';
 
