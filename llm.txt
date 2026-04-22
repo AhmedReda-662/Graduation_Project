@@ -1,0 +1,154 @@
+MASTER PROMPT FOR COPILOT AI AGENT – EYE GAZE TRACKING SYSTEM
+
+ROLE
+You are a senior AI engineer, computer vision researcher, and mobile systems architect.
+Your task is to design and implement a real-time eye-gaze tracking system for mobile devices
+to be integrated into an educational mobile application.
+The system must allow users to interact with the app using only their eye movements.
+
+OBJECTIVE
+Build an AI-powered eye gaze tracking system that:
+- Uses the mobile phone front camera
+- Tracks user eye position & gaze direction
+- Maps gaze to screen coordinates
+- Returns real-time gaze points
+- Enables hands-free navigation in an educational app
+
+FUNCTIONAL REQUIREMENTS
+
+1. Eye Tracking Capabilities
+- Detect face and eyes in real-time
+- Track eye landmarks (pupil, iris, eyelids)
+- Determine gaze direction (left, right, up, down)
+- Convert gaze into 2D screen coordinates (x, y)
+- Support blink detection (optional for click/select)
+
+2. Interaction Features
+- Hover using gaze
+- Select element after dwell time (e.g., 800ms)
+- Blink-to-click (optional)
+- Scroll via vertical gaze movement
+- Zoom via eye gestures (advanced)
+
+3. Performance Constraints
+- End-to-end latency under 50ms
+- Minimum 30 FPS
+- Works on mid-range mobile devices
+- Robust under varying lighting conditions
+
+SYSTEM ARCHITECTURE
+
+High-Level Flow
+Mobile App (Camera)
+→ video frames (WebRTC / WebSocket)
+→ Backend AI Inference Server
+→ gaze prediction (x, y)
+→ Mobile App UI Interaction Layer
+
+Detailed Flow
+1. User opens the mobile app
+2. Front camera captures video frames
+3. Frames are sent to backend in real-time
+4. AI model processes frames
+5. Backend returns gaze coordinates and confidence score
+6. App highlights or selects UI elements
+
+ARCHITECTURE COMPONENTS
+
+Mobile Client
+- Front camera capture
+- Video compression
+- Frame streaming
+- UI gaze mapping
+- Calibration screen
+
+AI Backend
+- Face detection
+- Eye landmark extraction
+- Gaze estimation model
+- Calibration adjustment
+- Real-time inference API
+
+Communication
+- WebSocket or WebRTC for low latency
+- Binary frame streaming
+- JSON or Protobuf responses
+
+TOOLS & TECHNOLOGIES
+
+Computer Vision
+- MediaPipe Face Mesh
+- OpenCV
+- Dlib (optional)
+- OpenFace (advanced)
+
+Machine Learning
+- CNN-based gaze estimation
+- MediaPipe Iris model
+- Custom regression model for screen mapping
+- ONNX or TensorRT optimization
+
+Backend
+- Python with FastAPI
+- Node.js (optional for signaling)
+- GPU acceleration with CUDA
+- TensorRT or ONNX Runtime
+
+Mobile
+- React Native or Flutter
+- CameraX (Android)
+- AVFoundation (iOS)
+- WebRTC SDK
+
+Communication
+- WebSocket
+- WebRTC DataChannels
+- gRPC (optional)
+
+AI MODEL PIPELINE
+1. Face detection
+2. Eye region extraction
+3. Iris localization
+4. Gaze vector estimation
+5. Screen coordinate regression
+6. Temporal smoothing (Kalman filter)
+
+CALIBRATION SYSTEM
+- Display 5–9 calibration points on screen
+- User looks at each point
+- Capture gaze vectors
+- Fit personalized gaze mapping
+- Save calibration profile per user
+
+PRIVACY & SECURITY
+- No permanent video storage
+- Frames processed in memory only
+- Optional on-device inference
+- Encrypted transport (WSS)
+- GDPR & COPPA compliant
+
+REAL-TIME RESPONSE FORMAT
+{
+  "x": 512,
+  "y": 923,
+  "confidence": 0.94,
+  "blink": false
+}
+
+EDGE CASES
+- Glasses and reflections
+- Head movement
+- Low light environments
+- Partial face visibility
+- Different eye shapes
+- Device orientation changes
+
+FUTURE EXTENSIONS
+- Full on-device inference (TensorFlow Lite)
+- Eye gesture shortcuts
+- Accessibility-first mode
+- Attention analytics with privacy safeguards
+
+FINAL INSTRUCTION
+Design the system to be production-ready, modular, scalable, and optimized
+for real-time educational accessibility use cases.

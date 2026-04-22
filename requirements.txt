@@ -1,0 +1,27 @@
+# Eye Gaze Tracking System - Dependencies
+
+# Core Computer Vision
+opencv-python>=4.8.0
+mediapipe>=0.10.0
+numpy>=1.24.0
+
+# Machine Learning
+onnxruntime>=1.16.0
+scipy>=1.11.0
+
+# Backend Server
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+websockets>=12.0
+python-multipart>=0.0.6
+
+# Image Processing
+Pillow>=10.0.0
+
+# Utilities
+pydantic>=2.5.0
+python-dotenv>=1.0.0
+
+# Optional GPU acceleration
+# onnxruntime-gpu>=1.16.0
+# tensorrt>=8.6.0
